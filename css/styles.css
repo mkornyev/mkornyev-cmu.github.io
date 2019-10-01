@@ -16,9 +16,27 @@ html {
   z-index: 200;
 }*/
 
+/* Pulldown */
+#pulldown {
+	position: absolute;
+	top: 0;
+	height: 40px;
+
+	background-color: blue;
+}
+
+#pulldown-tab {
+	color: red; 
+	width: 100px;
+	height: 100px
+
+	background-color: red;
+}
+
 /* Heading */
 div.landing {
 	height: 75vh;
+	padding-top: 10vh;
 }
 div.about {
 	height: 75vh; 
@@ -27,7 +45,6 @@ div.about {
 }
 
 div.header {
-	padding-top: 5%;
 	padding-left: 10%;
 }
 div.header h1 {
@@ -37,13 +54,36 @@ div.header p.tagline {
 	font-size: 2em;
 }
 
-button.resume-btn {
-	background-color: #4e71ba;
+#resume-btn {
+	-moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+
+    margin-left: 25px;
+    text-decoration: none;
+	background-color: #9FD87B;
+}
+#resume-btn:hover {
+	background-color: #9DC3C2;
+	color: black
+}
+
+.tag-module {
+  padding: 1rem;
+  padding-top: 0px;
+  border-width: 10px;
+  border-style: solid;
+  border-image: 
+    linear-gradient(
+      to bottom, 
+      #9DC3C2, 
+      rgba(0, 0, 0, 0)
+    ) 1 100%;
 }
 
 /* Nav menu */
 div.nav {
-	padding-top: 10%;
 	padding-left: 5%;
 	padding-bottom: 10%;
 }
@@ -66,10 +106,12 @@ div.nav div {
 	z-index: 100;
 }
 
-div.nav div:hover {
+.nav1:hover, .nav2:hover, .nav3:hover {
+/*div.nav div:hover {*/
 	background-color: #4e71ba;
     color: lightgray; 
     right: 6%;
+    cursor: pointer;
 }
 
 div.nav span {
@@ -94,6 +136,7 @@ div.nav3 {
 
 	/*New Styles*/
 	z-index: 102;
+	background-color: #9FD87B;
 
 	/*Nav div*/
 	display: table; 
@@ -101,16 +144,17 @@ div.nav3 {
 	position: fixed;
 
 	top: 45%;
-	right: 5%;
-	width: 7%;
+	right: 4.9%;
+	width: 4.7%;
 	height: 10%;
-	/*background-color: #2f55a4; */
-	background-color: red;
 	color: white;
 	border-radius: 35px;
 	font-size: 1.75em;
 
 	transition: background-color .5s ease, right .5s ease, color .5s ease;
+}
+
+#nav3button:hover {
 }
 
 .transformDown {
@@ -137,6 +181,7 @@ div.nav3 {
 	/*background-color: #4e71ba;*/
     color: lightgray; 
     right: 6%;
+    cursor: pointer;
 }
 
 /*#nav_helper {
