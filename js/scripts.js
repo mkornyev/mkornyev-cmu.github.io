@@ -1,7 +1,21 @@
 var navCompressed = false; 
 var minimizedController;
 
+var maxWidth = window.matchMedia("(max-width: 800px)")
+navMediaQuery(maxWidth) 
+maxWidth.addListener(navMediaQuery)
+
 $(document).ready(function () {
+
+	myBodyOBJ = document.body||document.querySelector(".banner")[0][0];
+	
+	myBodyOBJ.onscroll = function() {myFunction()};
+
+	function myFunction() {
+	    console.log("LOGGIN")
+	}
+
+	// ---------
 
 	const header = document.querySelector(".header");
 	const nav1 = document.querySelector(".nav1");
@@ -9,6 +23,8 @@ $(document).ready(function () {
 	const nav3 = document.querySelector(".nav3");
 	const nav4 = document.querySelector("#nav4");
 	nav4.style.display = 'none';
+
+	const mobileNav = document.querySelector("#mobile-nav");
 	const tag_module = document.querySelector(".tag-module");
 	// const nav_helper = document.querySelector("#nav_helper");
 
@@ -23,6 +39,8 @@ $(document).ready(function () {
 	tl.fromTo(nav3,.15,{x: -20},{x:0});
 	tl.fromTo(nav3button,.5,{x: 800, opacity: 0},{x:-20, opacity: 1},"-=1");
 	tl.fromTo(nav3button,.15,{x: -20},{x:0});
+	tl.fromTo(mobileNav,.3,{x: '100vw', opacity: 0},{x: '-5vw', opacity: 1},"-=1");
+	tl.fromTo(mobileNav,.15,{x: '-5vw'},{x: '0vw'},"-=.7");
 
 	// Module border animation:
 
@@ -45,6 +63,15 @@ $(document).ready(function () {
 	var navLink = $('.nav3');
 	var landing = $('.landing');
 	var $window = $(window);
+
+	// console.log("JS EVENTS: ")
+	$('#html-tag').scroll(function(event) { console.log("Window scroll event") });
+	$('#landing-div').scroll(function(event) { console.log("landing-div scroll event") });
+	$('.about').scroll(function(event) { console.log("about scroll event") });
+	$window.scroll(function(event) { console.log("$Window scroll event") });
+	$(document).scroll(function(event) { console.log("document scroll event") });
+	$('#desktop-nav').scroll(function(event) { console.log("wrap scroll event") });
+
 
 	$window.scroll(function(event) { 
 
@@ -73,6 +100,18 @@ $(document).ready(function () {
 		}
 	  
 	});
+
+	//Mobile Nav Listener 
+    $(".segmented label input[type=radio]").each(function(){
+        $(this).on("change", function(){
+            if($(this).is(":checked")){
+               $(this).parent().siblings().each(function(){
+                    $(this).removeClass("checked");
+                });
+                $(this).parent().addClass("checked");
+            }
+        });
+    });
 
 	// Other Listeners:
 
@@ -126,6 +165,19 @@ $(document).ready(function () {
     // });
 
 });
+
+
+function navMediaQuery(maxWidth) {
+  if (maxWidth.matches) { 
+  	document.querySelector("#mobile-nav").style.display = "block";
+  	document.querySelector("#desktop-nav").style.display = "none";
+  	document.querySelector("#landing-div").style.paddingTop = "0vh";
+  } else {
+  	document.querySelector("#mobile-nav").style.display = "none";
+    document.querySelector("#desktop-nav").style.display = "block";
+    document.querySelector("#landing-div").style.paddingTop = "10vh";
+  }
+}
 
 
 function toggleNav() {

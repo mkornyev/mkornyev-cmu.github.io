@@ -1,0 +1,18 @@
+
+@media only screen and (max-width: 800px) {
+	
+	div.landing div.nav {
+		display: none; 
+	} 
+
+	/* Nav Toggles */
+	#mobile-nav {
+		display: block; 
+	}
+
+
+	div.landing {
+		padding-top: 20vh;
+	}
+
+} 

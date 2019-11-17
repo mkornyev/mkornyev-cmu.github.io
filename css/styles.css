@@ -1,8 +1,11 @@
 
-html {
-	height: 100vh;
-	width: 100vw;
-	overflow: auto;
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
 }
 
 /*Resume Modal*/
@@ -17,7 +20,7 @@ html {
 }*/
 
 /* Pulldown */
-#pulldown {
+/*#pulldown {
 	position: absolute;
 	top: 0;
 	height: 40px;
@@ -31,6 +34,69 @@ html {
 	height: 100px
 
 	background-color: red;
+}*/
+
+/* Mobile Nav */
+#mobile-nav {
+	display: none; 
+
+	padding: 40px;
+	margin: 20px 0;
+}
+
+	/* Segments */
+.segmented {
+    display: flex;
+    flex-flow: row wrap;
+    box-sizing: border-box;
+    font-family: "Helvetica Neue";
+    font-sizez: 110%;
+    text-align: center;
+}
+.segmented label {
+    display:block;
+    flex:1;
+    box-sizing:border-box;
+    border:1px solid #2f55a4;
+    border-right:none;
+    color:#2f55a4;
+    margin:0;
+    padding:.4em;
+    cursor: pointer;
+    user-select:none;
+    -webkit-user-select:none;
+
+    -moz-transition: all .15s ease-in;
+    -o-transition: all .15s ease-in;
+    -webkit-transition: all .15s ease-in;
+    transition: all .15s ease-in;
+}
+.segmented label.checked {
+    background:#2f55a4;
+    color:#fff;
+}
+.segmented.inverted label {
+    border-color:#fff;
+    color:#fff;
+    background:none;
+}
+.segmented.inverted label.checked {
+    background:#fff;
+    color:inherit;
+}
+.segmented label:first-child {
+    border-radius:.6em 0 0 .6em;
+    border-right:0;
+}
+.segmented label:last-child {
+    border-radius:0 .6em .6em 0;
+    border-right:1px solid;
+}
+.segmented input[type="radio"] {
+    appearance:none;
+    -webkit-appearance:none;
+    margin:0;
+    position: absolute;
 }
 
 /* Heading */
@@ -38,14 +104,9 @@ div.landing {
 	height: 75vh;
 	padding-top: 10vh;
 }
-div.about {
-	height: 75vh; 
-	background-color: yellow;
-	z-index: -1
-}
 
-div.header {
-	padding-left: 10%;
+div.landing div.header {
+	padding-left: 10%; 
 }
 div.header h1 {
 	font-size: 3em;
@@ -198,7 +259,8 @@ div.nav3 {
 
 #nav4 {
 	all: unset;
-
+	display: none;
+	
 	text-align: left;
 	font-size: 1.75em;
 	/*padding-top: 4%;*/
@@ -231,6 +293,32 @@ div.nav3 {
 #dropdown_list a:hover {
 	/*color: blue;*/
 	text-decoration: underline;
+}
+
+/* About Section  */
+div.about {
+	height: 75vh; 
+	z-index: -1;
+}
+
+/* Banner */
+div.banner {
+}
+
+div.banner {
+	margin-top: 12.5vh; 
+	height: 50vh;
+	background-color: #F7F7F7;
+
+	/*border-top: 5px; */
+	/*border-bottom: 5px; */
+/*	border-width: 5px;*/
+
+	/*background-color: gray; */
+	padding: 2% 0 2% 0; 
+	border-top: 3px solid #ECF4F4; 
+	/*border-top: 1px solid #D5E5E5; */
+	border-bottom: 3px solid #D5E5E5;
 }
 
 

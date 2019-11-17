@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en"> 
+<html id="html-tag" lang="en" style=""> 
 
 <head>
     <title>Maksym Kornyev</title>
@@ -8,7 +8,7 @@
     
     <!-- Metadata for the website -->
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta name="author" content="Maksym Kornyev">
     
     <!-- Meta Bio -->
@@ -48,19 +48,27 @@
     </div>
 </div> -->
 
-<div id="pulldown"></div>
-<div id="pulldown-tab"></div>
+<!-- <div id="pulldown"></div>
+<div id="pulldown-tab"></div> -->
+
+<div id="mobile-nav">
+    <div class="segmented">
+        <label class="checked"><input type="radio" name="segmented" checked />About</label>
+        <label><input type="radio" name="segmented" /> Contact</label>
+        <label><input type="radio" name="segmented" /> Projects</label>
+    </div>
+</div>
 
 <!-- Landing Page -->
-<div class="landing row">
-    <div class="header col">
+<div id="landing-div" class="landing row">
+    <div class="header col" style="margin-right: 5%;">
         <h1 class="h1_thing">Maksym Kornyev</h1>
         <p class="tagline">Student, developer, and human being.</p>
         <p class="tag-module">I am a Junior in the Information Systems program at Carnegie Mellon University. Two things that really get me going are JavaScript and bottom-up design.<br><br>Read more about my work below!</p>
         <a id="resume-btn" href="#" class="btn-lg btn-primary" data-toggle="my_modal" data-target="my_modal">Resume</a><br>
         <br><p class="small text-muted">Dont forget to check out <a href="#">V1</a> of the site.</p>
     </div>
-    <div id="" class="nav col">
+    <div id="desktop-nav" class="nav col">
         <a id="nav1" href="#header_top"><div class="nav1"><span>About</span></div></a>
         <a id="nav2" href="#header_top"><div class="nav2"><span>Contact</span></div></a>
         <section id="dropdown_menu">
@@ -77,7 +85,7 @@
 </div>
      
 <div class="about row">
-    <div class="col">
+    <div class="banner col">
         
     </div>
 </div>
