@@ -106,13 +106,40 @@ div.landing {
 }
 
 div.landing div.header {
-	padding-left: 10%; 
+	padding-left: 10%;
+	margin-right: 5%; 
+	text-align: center; 
 }
 div.header h1 {
 	font-size: 3em;
 }
 div.header p.tagline {
 	font-size: 2em;
+}
+
+.carnegie { color: rgb(182, 102, 102) !important; }
+.isr { color: #2f55a4; }
+
+.header-img {
+	border-radius: 50%;
+	width: 120px;
+	height: 120px;
+
+	position: relative;
+}
+
+.header-img, 
+.header-name {
+	display: inline-block;
+}
+
+#dropDownButton {
+	transform: rotate(0.25turn);
+}
+
+.sub-section {
+	margin-top: 5vh; 
+	text-align: center;
 }
 
 #resume-btn {
@@ -135,6 +162,7 @@ div.header p.tagline {
   padding-top: 0px;
   border-width: 10px;
   border-style: solid;
+  text-align: left;
   border-image: 
     linear-gradient(
       to bottom, 
@@ -240,7 +268,7 @@ div.nav3 {
 
 #nav3button:hover {
 	/*background-color: #4e71ba;*/
-    color: lightgray; 
+    color: rgb(207, 74, 74); 
     right: 6%;
     cursor: pointer;
 }
@@ -273,7 +301,6 @@ div.nav3 {
 
 	width: 30%;
 	height: 0%;
-	padding-top: 10%;
 	color: white;
 	border-radius: 0px 0px 35px 35px;
 	z-index: 0;
@@ -302,12 +329,36 @@ div.about {
 }
 
 /* Banner */
-div.banner {
+div.banner ul {
+	margin: auto;
+}
+
+div.banner img {
+	width: 15%;
+	display: inline-block;
+    zoom:1;
+    *display:inline;
+	/* height: 100px; */
+	margin: 4.25%;
+	/* margin: auto; */
+	transition: filter .5s;
+
+}
+
+div.banner img:hover {
+	cursor: pointer;
+	-webkit-animation: blur .6s;
+}
+
+@-webkit-keyframes blur {
+	0% { -webkit-filter: blur(0px); }
+	50% { -webkit-filter: blur(4px); }
+	100% { -webkit-filter: blur(0px); }
 }
 
 div.banner {
 	margin-top: 12.5vh; 
-	height: 50vh;
+	height: 30vw;
 	background-color: #F7F7F7;
 
 	/*border-top: 5px; */

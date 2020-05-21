@@ -1,18 +1,28 @@
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 760px) {
 	
-	div.landing div.nav {
-		display: none; 
-	} 
-
-	/* Nav Toggles */
-	#mobile-nav {
-		display: block; 
+	div.header h1.header-name { 
+		font-size: 2em;
 	}
 
+	div.header p.tagline {
+		font-size: 1.5em !important;
+	}
 
-	div.landing {
-		padding-top: 20vh;
+	.tag-module {
+		font-size: .95em;
 	}
 
 } 
+
+@media only screen and (min-width: 760px) and (max-width: 1048px) {
+
+	div.landing div.header {
+		margin-right: 2.5%;
+		padding-left: 5%;
+	}
+
+	div.sub-section {
+		margin-top: 2%;
+	}
+}

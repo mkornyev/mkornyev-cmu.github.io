@@ -1,5 +1,5 @@
 var navCompressed = false; 
-var minimizedController;
+// var minimizedController;
 
 var maxWidth = window.matchMedia("(max-width: 800px)")
 navMediaQuery(maxWidth) 
@@ -7,13 +7,13 @@ maxWidth.addListener(navMediaQuery)
 
 $(document).ready(function () {
 
-	myBodyOBJ = document.body||document.querySelector(".banner")[0][0];
+	// myBodyOBJ = document.body||document.querySelector(".banner")[0][0];
 	
-	myBodyOBJ.onscroll = function() {myFunction()};
+	// myBodyOBJ.onscroll = function() {myFunction()};
 
-	function myFunction() {
-	    console.log("LOGGIN")
-	}
+	// function myFunction() {
+	//     console.log("LOGGIN")
+	// }
 
 	// ---------
 
@@ -22,13 +22,15 @@ $(document).ready(function () {
 	const nav2 = document.querySelector(".nav2");
 	const nav3 = document.querySelector(".nav3");
 	const nav4 = document.querySelector("#nav4");
-	nav4.style.display = 'none';
-
+	const headerImg = document.querySelector(".header-img");
+	const tagSection = document.querySelector(".tag-module");
 	const mobileNav = document.querySelector("#mobile-nav");
-	const tag_module = document.querySelector(".tag-module");
 	// const nav_helper = document.querySelector("#nav_helper");
 
 	const tl = new TimelineMax(); 
+
+
+	// ----------------- ANIMATIONS -----------------
 
 	// Nav slide-in
 	tl.fromTo(nav1,.5,{x: 800, opacity: 0},{x:-20, opacity: 1});
@@ -41,23 +43,7 @@ $(document).ready(function () {
 	tl.fromTo(nav3button,.15,{x: -20},{x:0});
 	tl.fromTo(mobileNav,.3,{x: '100vw', opacity: 0},{x: '-5vw', opacity: 1},"-=1");
 	tl.fromTo(mobileNav,.15,{x: '-5vw'},{x: '0vw'},"-=.7");
-
-	// Module border animation:
-
-	// var style = document.createElement('style');
-	//   style.innerHTML = `
-	//   .tag_module {
-	// 	  border-image: 
-	// 	    linear-gradient(
-	// 	      to bottom, 
-	// 	      #9DC3C2, 
-	// 	      rgba(0, 0, 0, 0)
-	// 	    ) 1 100%;
-	//   }
-	//   `;
-	// document.head.appendChild(style);
-
-	// tl.fromTo(tag_module,.5,{borderRightWidth: 0, borderLeftWidth: 0},{borderRightWidth: 10, borderLeftWidth: 10},"-=0");
+	tl.fromTo(headerImg,.75,{opacity: '0'},{opacity: '1'},"-=.25");
 
 	// Nav resize 
 	var navLink = $('.nav3');
@@ -65,15 +51,15 @@ $(document).ready(function () {
 	var $window = $(window);
 
 	// console.log("JS EVENTS: ")
-	$('#html-tag').scroll(function(event) { console.log("Window scroll event") });
-	$('#landing-div').scroll(function(event) { console.log("landing-div scroll event") });
-	$('.about').scroll(function(event) { console.log("about scroll event") });
-	$window.scroll(function(event) { console.log("$Window scroll event") });
-	$(document).scroll(function(event) { console.log("document scroll event") });
-	$('#desktop-nav').scroll(function(event) { console.log("wrap scroll event") });
-
+	// $('#html-tag').scroll(function(event) { console.log("Window scroll event") });
+	// $('#landing-div').scroll(function(event) { console.log("landing-div scroll event") });
+	// $('.about').scroll(function(event) { console.log("about scroll event") });
+	// $window.scroll(function(event) { console.log("$Window scroll event") });
+	// $(document).scroll(function(event) { console.log("document scroll event") });
+	// $('#desktop-nav').scroll(function(event) { console.log("wrap scroll event") });
 
 	$window.scroll(function(event) { 
+		console.log('Working!')
 
 		var yDist = (navLink.offset()['top'] + navLink.height());
 		var divHeight = (landing.height());
@@ -101,7 +87,7 @@ $(document).ready(function () {
 	  
 	});
 
-	//Mobile Nav Listener 
+	//Mobile Nav Listener:
     $(".segmented label input[type=radio]").each(function(){
         $(this).on("change", function(){
             if($(this).is(":checked")){
@@ -113,8 +99,7 @@ $(document).ready(function () {
         });
     });
 
-	// Other Listeners:
-
+	// Nav Clicks:
 	$('#nav1').on('click', function(event) { 
 		if (this.hash !== "") {
 		  event.preventDefault();
@@ -133,20 +118,22 @@ $(document).ready(function () {
 		  var hash = this.hash;
 
 		  $('html, body').animate({
-		    scrollTop: $(hash).offset().top
-		  }, 700, function(){
-		    window.location.hash = hash;
-		  });
+		    scrollTop: $('.about').offset().top
+		  }, 700);
 		}
 	});
+
 	$('#nav3button').on('click', function(event) { 
+		const button = document.querySelector("#dropDownButton");
 
 		// Toggle dropdown 
 		if ($('#nav4').height() == 0) {
 			nav4.style.display = 'block';
-			tl.fromTo(nav4,.5,{height: '0%', paddingTop: '0%'},{height: '100px', paddingTop: '4%'});
+			tl.fromTo(nav4,.5,{height: '0%', paddingTop: '0%'},{height: '80px', paddingTop: '6.5vh'});
+			tl.fromTo(button,.25,{rotation: '90'},{rotation: '0'},'-=.5');
 		} else {
-			tl.fromTo(nav4,.5,{height: '100px', paddingTop: '4%'},{height: '0px', paddingTop: '0%'});
+			tl.fromTo(nav4,.25,{height: '80px', paddingTop: '6.5vh'},{height: '0px', paddingTop: '0%'},'-=0.5');
+			tl.fromTo(button,.25,{rotation: '0'},{rotation: '90'});
 		}
 
 	});

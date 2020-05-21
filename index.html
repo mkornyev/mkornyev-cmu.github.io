@@ -17,11 +17,10 @@
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link rel="stylesheet" media="all" type="text/css" href="css/styles_mobile.css" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
-    <!-- <link rel="stylesheet" media="all" type="text/css" href="css/stylesmobile.css" /> -->
 </head>
 
 
@@ -53,22 +52,28 @@
 
 <!-- Landing Page -->
 <div id="landing-div" class="landing row">
-    <div class="header col" style="margin-right: 5%;">
-        <h1 class="h1_thing">Maksym Kornyev</h1>
-        <p class="tagline">Student, developer, and music lover.</p>
+    <div class="header col">
+        <div>
+            <img class="header-img" src="assets/headshotSmall.JPG"><br>
+            <h1 class="header-name">Maksym Kornyev</h1>
+            <!-- <img class="header-img" src="assets/headshotSmall.JPG"> -->
+        </div>
+        <p class="tagline">Student and full stack developer.</p>
         <p class="tag-module">
-            I am a Senior in the Information Systems program @ Carnegie Mellon University, with a minor in Software Engineering.<br><br>
+            I am a Senior in the Information Systems program <span class="carnegie">@ Carnegie Mellon University</span>, with a minor in <span class="isr">Software Engineering.</span><br><br>
             My specialties are full stack web development and creative problem solving. Check out my projects below!
         </p>
-        <a id="resume-btn" href="#" class="btn-lg btn-primary" data-toggle="my_modal" data-target="my_modal">Resume</a><br>
-        <br><p class="small text-muted">Dont forget to check out <a href="#">V1</a> of the site.</p>
+        <div class="sub-section">
+            <a id="resume-btn" href="#" class="btn-lg btn-primary" data-toggle="my_modal" data-target="my_modal">Resume</a><br>
+            <br><p class="small text-muted">Dont forget to check out <a href="https://mkornyev.github.io">V1</a> of the site.</p>
+        </div>
     </div>
     <div id="desktop-nav" class="nav col">
         <a id="nav1" href="#header_top"><div class="nav1"><span>About</span></div></a>
         <a id="nav2" href="#header_top"><div class="nav2"><span>Contact</span></div></a>
         <section id="dropdown_menu">
-            <div id="nav3button" class="nav3button transformUp"><span>V</span></div>
-            <div id="nav3" class="nav3"><span>Projects</span></div>
+            <div id="nav3button" class="nav3button transformUp"><span id="dropDownButton">V</span></div>
+            <a href="index.html"><div id="nav3" class="nav3"><span>Projects</span></div></a>
             <div id="nav4"> 
                 <ul id="dropdown_list">
                     <li><a id="exp_link" href="#">Work Experience</a></li>
@@ -81,7 +86,16 @@
      
 <div class="about row">
     <div class="banner col">
-        
+        <!-- <ul>
+            <li><img src="assets/github.png"></li>
+            <li><img src="assets/linkedin.png"></li>
+            <li><img src="assets/facebook.png"></li>
+            <li><img src="assets/mail.png"></li>
+        </ul> -->
+        <a href="https://github.com/mkornyev" target="_blank"><img src="assets/github.png"></a>
+        <a href="https://www.linkedin.com/in/mkornyev" target="_blank"><img src="assets/linkedin.png"></a>
+        <a href="https://www.facebook.com/max.kornyev" target="_blank"><img src="assets/facebook.png"></a>
+        <a href="mailto:mkornyev@gmail.com"><img src="assets/mail.png"></a>
     </div>
 </div>
 
