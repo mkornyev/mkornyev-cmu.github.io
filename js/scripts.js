@@ -54,9 +54,9 @@ $(document).ready(function () {
 	// ------------- NAV COMPRESSION ------------- 
 	var navLink = $('.nav3');
 	var landing = $('.landing');
-	
+
 	WIDTH = '40%';
-	C_WIDTH = '25%';
+	C_WIDTH = '35%';
 
 	HEIGHT = '10%';
 	C_HEIGHT = '7.5%';
@@ -74,7 +74,7 @@ $(document).ready(function () {
 		if (yDist > divHeight) {
 			if (!navCompressed) {
 				tl.fromTo(nav3,TIME,{width: WIDTH, height: HEIGHT, fontSize: FONT},{width: C_WIDTH, height: C_HEIGHT, fontSize: C_FONT});
-				tl.fromTo(nav3button,TIME,{width: '4.7%', height: HEIGHT, fontSize: FONT},{width: '3%', height: C_HEIGHT, fontSize: C_FONT},"-=.4");
+				tl.fromTo(nav3button,TIME,{width: '4.7%', height: HEIGHT, fontSize: FONT},{width: '3.5%', height: C_HEIGHT, fontSize: C_FONT},"-=.4");
 				tl.fromTo(nav4,TIME,{width: '30%', top: '50%', right: '6%'},{width: '20%', top: '48.75%', right: '6.1%'},"-=.4");
 				tl.fromTo(nav2,TIME,{width: WIDTH, height: HEIGHT, fontSize: FONT},{width: C_WIDTH, height: C_HEIGHT, fontSize: C_FONT}, "-=.35");
 				tl.fromTo(nav1,TIME,{width: WIDTH, height: HEIGHT, fontSize: FONT},{width: C_WIDTH, height: C_HEIGHT, fontSize: C_FONT},"-=.3");
@@ -86,7 +86,7 @@ $(document).ready(function () {
 				tl.fromTo(nav1,C_TIME,{width: C_WIDTH, height: C_HEIGHT, fontSize: C_FONT},{width: WIDTH, height: HEIGHT, fontSize: FONT});
 				tl.fromTo(nav2,C_TIME,{width: C_WIDTH, height: C_HEIGHT, fontSize: C_FONT},{width: WIDTH, height: HEIGHT, fontSize: FONT},"-=.45");
 				tl.fromTo(nav3,C_TIME,{width: C_WIDTH, height: C_HEIGHT, fontSize: C_FONT},{width: WIDTH, height: HEIGHT, fontSize: FONT},"-=.4");
-				tl.fromTo(nav3button,C_TIME,{width: '3%', height: C_HEIGHT, fontSize: C_FONT},{width: '4.7%', height: HEIGHT, fontSize: FONT},"-=.5");
+				tl.fromTo(nav3button,C_TIME,{width: '3.5%', height: C_HEIGHT, fontSize: C_FONT},{width: '4.7%', height: HEIGHT, fontSize: FONT},"-=.5");
 				tl.fromTo(nav4,C_TIME,{width: '20%', top: '48.75%', right: '6.1%'},{width: '30%', top: '50%', right: '6%'},"-=.5");
 			}
 			navCompressed = false; 			
