@@ -26,11 +26,25 @@
 }*/
 
 /* Mobile Nav */
-#mobile-nav {
+/* #mobile-nav {
 	display: none; 
 
 	padding: 40px;
 	margin: 20px 0;
+} */
+
+#mobile-nav {
+	display: none; 
+	z-index: 102;
+
+	padding: 40px;
+	padding-top: 0;
+	margin: 20px 0;
+
+	position: relative;
+	left: 5%;
+	top: 0%;
+	width: 90%;
 }
 
 	/* Segments */
@@ -43,7 +57,8 @@
     text-align: center;
 }
 .segmented label {
-    display:block;
+	display:block;
+	background-color: white;
     flex:1;
     box-sizing:border-box;
     border:1px solid #2f55a4;
@@ -89,6 +104,7 @@
 }
 
 /* Heading */
+
 div.landing {
 	height: 75vh;
 	padding-top: 10vh;
@@ -183,6 +199,7 @@ div.nav div {
 	font-size: 1.75em;
 
 	transition: background-color .5s ease, right .5s ease, color .5s ease;
+	background-image: linear-gradient(to right, #2f55a4 0%, #2f55a4 45%, rgb(129, 167, 165) 100%);
 
 	z-index: 100;
 }

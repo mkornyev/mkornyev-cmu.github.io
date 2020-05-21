@@ -1,7 +1,7 @@
 var navCompressed = false; 
 // var minimizedController;
 
-var maxWidth = window.matchMedia("(max-width: 800px)")
+var maxWidth = window.matchMedia("(max-width: 760px)")
 navMediaQuery(maxWidth) 
 maxWidth.addListener(navMediaQuery)
 
@@ -51,6 +51,24 @@ $(document).ready(function () {
     
 	});
 
+	// MOBILE NAV POSITION
+	$window.scroll( function(){
+		var offset = $(window).scrollTop()
+		// console.log(offset)
+		$('#mobile-nav').css('top', offset)
+		// $('#mobile-nav').css('top', function(index){
+		// 	var offset = $(window).scrollTop()
+		// 	console.log(offset)
+		// 	// console.log(index)
+		// 	return offset
+		// })
+	})
+
+	$('#nav3-mobile').on('click', function(){
+		var path = window.location.pathname.substring(0, window.location.pathname.indexOf('index.html'))
+		window.location = path + "projects.html"
+	})
+
 	// ------------- NAV COMPRESSION ------------- 
 	var navLink = $('.nav3');
 	var landing = $('.landing');
@@ -74,7 +92,7 @@ $(document).ready(function () {
 		if (yDist > divHeight) {
 			if (!navCompressed) {
 				tl.fromTo(nav3,TIME,{width: WIDTH, height: HEIGHT, fontSize: FONT},{width: C_WIDTH, height: C_HEIGHT, fontSize: C_FONT});
-				tl.fromTo(nav3button,TIME,{width: '4.7%', height: HEIGHT, fontSize: FONT},{width: '3.5%', height: C_HEIGHT, fontSize: C_FONT},"-=.4");
+				tl.fromTo(nav3button,TIME,{width: '4.7%', height: HEIGHT, fontSize: FONT},{width: '3%', height: C_HEIGHT, fontSize: C_FONT},"-=.4");
 				tl.fromTo(nav4,TIME,{width: '30%', top: '50%', right: '6%'},{width: '20%', top: '48.75%', right: '6.1%'},"-=.4");
 				tl.fromTo(nav2,TIME,{width: WIDTH, height: HEIGHT, fontSize: FONT},{width: C_WIDTH, height: C_HEIGHT, fontSize: C_FONT}, "-=.35");
 				tl.fromTo(nav1,TIME,{width: WIDTH, height: HEIGHT, fontSize: FONT},{width: C_WIDTH, height: C_HEIGHT, fontSize: C_FONT},"-=.3");
@@ -86,7 +104,7 @@ $(document).ready(function () {
 				tl.fromTo(nav1,C_TIME,{width: C_WIDTH, height: C_HEIGHT, fontSize: C_FONT},{width: WIDTH, height: HEIGHT, fontSize: FONT});
 				tl.fromTo(nav2,C_TIME,{width: C_WIDTH, height: C_HEIGHT, fontSize: C_FONT},{width: WIDTH, height: HEIGHT, fontSize: FONT},"-=.45");
 				tl.fromTo(nav3,C_TIME,{width: C_WIDTH, height: C_HEIGHT, fontSize: C_FONT},{width: WIDTH, height: HEIGHT, fontSize: FONT},"-=.4");
-				tl.fromTo(nav3button,C_TIME,{width: '3.5%', height: C_HEIGHT, fontSize: C_FONT},{width: '4.7%', height: HEIGHT, fontSize: FONT},"-=.5");
+				tl.fromTo(nav3button,C_TIME,{width: '3%', height: C_HEIGHT, fontSize: C_FONT},{width: '4.7%', height: HEIGHT, fontSize: FONT},"-=.5");
 				tl.fromTo(nav4,C_TIME,{width: '20%', top: '48.75%', right: '6.1%'},{width: '30%', top: '50%', right: '6%'},"-=.5");
 			}
 			navCompressed = false; 			
@@ -111,23 +129,31 @@ $(document).ready(function () {
 	// Nav Clicks:
 	$('#nav1').on('click', function(event) { 
 		if (this.hash !== "") {
-		  event.preventDefault();
+		//   event.preventDefault();
 		  var hash = this.hash;
 
 		  $('html, body').animate({
 		    scrollTop: $(hash).offset().top
-		  }, 700, function(){
-		    window.location.hash = hash;
-		  });
+		  }, 700);
 		}
 	});
-	$('#nav2').on('click', function(event) { 
+	$('#nav2, #nav2-mobile').on('click', function(event) { 
 		if (this.hash !== "") {
-		  event.preventDefault();
+		//   event.preventDefault();
 		  var hash = this.hash;
 
 		  $('html, body').animate({
 		    scrollTop: $('.about').offset().top
+		  }, 700);
+		}
+	});
+	$('#nav1-mobile').on('click', function(event) { 
+		if (this.hash !== "") {
+		//   event.preventDefault();
+		  var hash = this.hash;
+
+		  $('html, body').animate({
+		    scrollTop: 0
 		  }, 700);
 		}
 	});

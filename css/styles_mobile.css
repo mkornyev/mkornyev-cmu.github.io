@@ -13,6 +13,11 @@
 		font-size: .95em;
 	}
 
+	.header-img {
+		margin-top: 0vh;
+		margin-bottom: 5vh;
+	}
+
 } 
 
 @media only screen and (min-width: 760px) and (max-width: 1048px) {
