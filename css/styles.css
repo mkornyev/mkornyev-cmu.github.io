@@ -199,7 +199,7 @@ div.nav div {
 	font-size: 1.75em;
 
 	transition: background-color .5s ease, right .5s ease, color .5s ease;
-	background-image: linear-gradient(to right, #2f55a4 0%, #2f55a4 45%, rgb(129, 167, 165) 100%);
+	/* background-image: linear-gradient(to right, #2f55a4 0%, #2f55a4 45%, rgb(129, 167, 165) 100%); */
 
 	z-index: 100;
 }
