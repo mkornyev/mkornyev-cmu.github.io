@@ -6,16 +6,8 @@ navMediaQuery(maxWidth)
 maxWidth.addListener(navMediaQuery)
 
 $(document).ready(function () {
-
-	// myBodyOBJ = document.body||document.querySelector(".banner")[0][0];
-	
-	// myBodyOBJ.onscroll = function() {myFunction()};
-
-	// function myFunction() {
-	//     console.log("LOGGIN")
-	// }
-
-	// ---------
+	// Reset scroll position
+	$(this).scrollTop(0);
 
 	const header = document.querySelector(".header");
 	const nav1 = document.querySelector(".nav1");
@@ -25,12 +17,11 @@ $(document).ready(function () {
 	const headerImg = document.querySelector(".header-img");
 	const tagSection = document.querySelector(".tag-module");
 	const mobileNav = document.querySelector("#mobile-nav");
-	// const nav_helper = document.querySelector("#nav_helper");
 
 	const tl = new TimelineMax(); 
 
 
-	// ----------------- ANIMATIONS -----------------
+	// ----------------- LANDING ANIMATION -----------------
 
 	// Nav slide-in
 	tl.fromTo(nav1,.5,{x: 800, opacity: 0},{x:-20, opacity: 1});
@@ -45,47 +36,65 @@ $(document).ready(function () {
 	tl.fromTo(mobileNav,.15,{x: '-5vw'},{x: '0vw'},"-=.7");
 	tl.fromTo(headerImg,.75,{opacity: '0'},{opacity: '1'},"-=.25");
 
-	// Nav resize 
-	var navLink = $('.nav3');
-	var landing = $('.landing');
+	// ------------- IMG FADE IN --------------
 	var $window = $(window);
 
-	// console.log("JS EVENTS: ")
-	// $('#html-tag').scroll(function(event) { console.log("Window scroll event") });
-	// $('#landing-div').scroll(function(event) { console.log("landing-div scroll event") });
-	// $('.about').scroll(function(event) { console.log("about scroll event") });
-	// $window.scroll(function(event) { console.log("$Window scroll event") });
-	// $(document).scroll(function(event) { console.log("document scroll event") });
-	// $('#desktop-nav').scroll(function(event) { console.log("wrap scroll event") });
+	$window.scroll( function(){
+        $('div.banner img').each( function(i){
+            var bottom_of_object = $(this).offset().top + $(this).outerHeight()/3;
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+            
+            if( bottom_of_window > bottom_of_object ){ 
+				$(this).animate({'opacity':'1'},500); 
+			}
+        }); 
+    
+	});
+
+	// ------------- NAV COMPRESSION ------------- 
+	var navLink = $('.nav3');
+	var landing = $('.landing');
+	
+	WIDTH = '40%';
+	C_WIDTH = '25%';
+
+	HEIGHT = '10%';
+	C_HEIGHT = '7.5%';
+
+	FONT = '1.75em';
+	C_FONT = '1.5em';
+
+	TIME = .3
+	C_TIME = .4
 
 	$window.scroll(function(event) { 
-		console.log('Working!')
-
 		var yDist = (navLink.offset()['top'] + navLink.height());
 		var divHeight = (landing.height());
 
 		if (yDist > divHeight) {
 			if (!navCompressed) {
-				tl.fromTo(nav3,.4,{width: '40%', height: '10%', fontSize: '1.75em'},{width: '25%', height: '7.5%', fontSize: '1.5em'});
-				tl.fromTo(nav3button,.4,{width: '4.7%', height: '10%', fontSize: '1.75em'},{width: '3%', height: '7.5%', fontSize: '1.5em'},"-=.4");
-				tl.fromTo(nav4,.4,{width: '30%', top: '50%', right: '6%'},{width: '20%', top: '48.75%', right: '6.1%'},"-=.4");
-				tl.fromTo(nav2,.4,{width: '40%', height: '10%', fontSize: '1.75em'},{width: '25%', height: '7.5%', fontSize: '1.5em'}, "-=.35");
-				tl.fromTo(nav1,.4,{width: '40%', height: '10%', fontSize: '1.75em'},{width: '25%', height: '7.5%', fontSize: '1.5em'},"-=.3");
+				tl.fromTo(nav3,TIME,{width: WIDTH, height: HEIGHT, fontSize: FONT},{width: C_WIDTH, height: C_HEIGHT, fontSize: C_FONT});
+				tl.fromTo(nav3button,TIME,{width: '4.7%', height: HEIGHT, fontSize: FONT},{width: '3%', height: C_HEIGHT, fontSize: C_FONT},"-=.4");
+				tl.fromTo(nav4,TIME,{width: '30%', top: '50%', right: '6%'},{width: '20%', top: '48.75%', right: '6.1%'},"-=.4");
+				tl.fromTo(nav2,TIME,{width: WIDTH, height: HEIGHT, fontSize: FONT},{width: C_WIDTH, height: C_HEIGHT, fontSize: C_FONT}, "-=.35");
+				tl.fromTo(nav1,TIME,{width: WIDTH, height: HEIGHT, fontSize: FONT},{width: C_WIDTH, height: C_HEIGHT, fontSize: C_FONT},"-=.3");
 			}
 			navCompressed = true; 
 
 		} else if (yDist < divHeight) {
 			if (navCompressed) {
-				tl.fromTo(nav1,.5,{width: '25%', height: '7.5%', fontSize: '1.5em'},{width: '40%', height: '10%', fontSize: '1.75em'});
-				tl.fromTo(nav2,.5,{width: '25%', height: '7.5%', fontSize: '1.5em'},{width: '40%', height: '10%', fontSize: '1.75em'},"-=.45");
-				tl.fromTo(nav3,.5,{width: '25%', height: '7.5%', fontSize: '1.5em'},{width: '40%', height: '10%', fontSize: '1.75em'},"-=.4");
-				tl.fromTo(nav3button,.5,{width: '3%', height: '7.5%', fontSize: '1.5em'},{width: '4.7%', height: '10%', fontSize: '1.75em'},"-=.5");
-				tl.fromTo(nav4,.5,{width: '20%', top: '48.75%', right: '6.1%'},{width: '30%', top: '50%', right: '6%'},"-=.5");
+				tl.fromTo(nav1,C_TIME,{width: C_WIDTH, height: C_HEIGHT, fontSize: C_FONT},{width: WIDTH, height: HEIGHT, fontSize: FONT});
+				tl.fromTo(nav2,C_TIME,{width: C_WIDTH, height: C_HEIGHT, fontSize: C_FONT},{width: WIDTH, height: HEIGHT, fontSize: FONT},"-=.45");
+				tl.fromTo(nav3,C_TIME,{width: C_WIDTH, height: C_HEIGHT, fontSize: C_FONT},{width: WIDTH, height: HEIGHT, fontSize: FONT},"-=.4");
+				tl.fromTo(nav3button,C_TIME,{width: '3%', height: C_HEIGHT, fontSize: C_FONT},{width: '4.7%', height: HEIGHT, fontSize: FONT},"-=.5");
+				tl.fromTo(nav4,C_TIME,{width: '20%', top: '48.75%', right: '6.1%'},{width: '30%', top: '50%', right: '6%'},"-=.5");
 			}
 			navCompressed = false; 			
 		}
 	  
 	});
+
+	// ------------- NAV COMPRESSION END ------------- 
 
 	//Mobile Nav Listener:
     $(".segmented label input[type=radio]").each(function(){

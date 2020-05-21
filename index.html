@@ -39,6 +39,27 @@
     </div>
 </div> -->
 
+<!-- Resume Modal -->
+<div class="modal fade" id="resume-modal" tabindex="-1" role="dialog" aria-labelledby="Modal containing a Resume PDF" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Resume | Maksym Kornyev</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <embed src="assets/resume.pdf" type="application/pdf" class="modal-content"></embed>
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div> -->
+      </div>
+    </div>
+  </div>
+
 <!-- <div id="pulldown"></div>
 <div id="pulldown-tab"></div> -->
 
@@ -64,7 +85,7 @@
             My specialties are full stack web development and creative problem solving. Check out my projects below!
         </p>
         <div class="sub-section">
-            <a id="resume-btn" href="#" class="btn-lg btn-primary" data-toggle="my_modal" data-target="my_modal">Resume</a><br>
+            <button id="resume-btn" type="button" class="btn btn-lg btn-info" data-toggle="modal" data-target="#resume-modal">Resume</button>
             <br><p class="small text-muted">Dont forget to check out <a href="https://mkornyev.github.io">V1</a> of the site.</p>
         </div>
     </div>
