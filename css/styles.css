@@ -105,6 +105,89 @@
 
 /* Heading */
 
+#backButton {
+	position: fixed;
+	top: 20vh;
+	left: 20px;
+	z-index: 100;
+}
+
+#logo {
+	width: 150px;
+}
+
+.projectsHeading {
+	margin-top: 6vh;
+}
+
+.projectsTag {
+	color: gray;
+	margin-top: 20vh;
+}
+
+.arrow-link {
+	border: 3px solid black;
+	border-width: 0 6px 6px 0;
+	display: inline-block;
+	margin-top: 30px;
+	padding: 10px;
+
+	-moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+}
+  
+#items {
+	height: auto;
+	margin-bottom: 20px;	
+}
+
+#backButton:hover {
+	color: lightgray;
+}
+
+.down {
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+}
+
+.left {
+	transform: rotate(135deg);
+	-webkit-transform: rotate(135deg);
+	margin: 15px;
+}
+
+.arrow {
+box-sizing: border-box;
+height: 5vw;
+width: 5vw;
+border-style: solid;
+border-color: gray;
+border-width: 0px 1px 1px 0px;
+transform: rotate(45deg);
+transition: border-width 150ms ease-in-out;
+display: inline-block;
+}
+
+.items-arrow:hover {
+border-bottom-width: 4px;
+border-right-width: 4px;
+}
+
+.container {
+display: flex;
+align-items: center;
+justify-content: center;
+background-color: #0e242d;
+height: 100vh;
+}
+
+#full {
+height: 100vh;
+background-color: #256347;
+}
+
+
 div.landing {
 	height: 75vh;
 	padding-top: 10vh;
@@ -250,9 +333,6 @@ div.nav3 {
 	font-size: 1.75em;
 
 	transition: background-color .5s ease, right .5s ease, color .5s ease;
-}
-
-#nav3button:hover {
 }
 
 .transformDown {
